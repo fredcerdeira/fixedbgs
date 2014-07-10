@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>BG Sections</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="main-nav">
+            <button class="btn-menu"><span>Menu</span></button>
+            <ul>
+                <li><a href="#1">Section 1</a></li>
+                <li><a href="#2">Section 2</a></li>
+                <li><a href="#3">Section 3</a></li>
+                <li><a href="#4">Section 4</a></li>
+                <li><a href="#5">Section 5</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content">
+        <section class="fixed-bg bg-1" id="1"></section>
+        <section class="scrolling-bg color-2" id="2">
+            <div class="content-wrap">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi, mollitia, repellendus sapiente repudiandae labore rerum amet culpa inventore, modi non. Quo nisi veritatis vitae nam, labore fugit. Inventore culpa iusto, officia exercitationem. Voluptates quibusdam odit odio incidunt consequatur, consectetur aspernatur optio vitae molestias, quas repellendus fugit ullam culpa, eligendi et dignissimos voluptatibus illum? Molestias aliquam nostrum quasi ipsa culpa, iusto explicabo ut error, consequuntur enim temporibus, adipisci tempora voluptate, id consequatur mollitia eveniet blanditiis. Illo quod repellendus alias? Cum rem doloremque adipisci accusantium? Saepe, necessitatibus!
+                </p>
+            </div>
+        </section>
+        <section class="fixed-bg bg-2" id="3"></section> 
+        <section class="scrolling-bg color-3">
+            <div class="content-wrap">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi, mollitia, repellendus sapiente repudiandae labore rerum amet culpa inventore, modi non. Quo nisi veritatis vitae nam, labore fugit. Inventore culpa iusto, officia exercitationem. Voluptates quibusdam odit odio incidunt consequatur, consectetur aspernatur optio vitae molestias, quas repellendus fugit ullam culpa, eligendi et dignissimos voluptatibus illum? Molestias aliquam nostrum quasi ipsa culpa, iusto explicabo ut error, consequuntur enim temporibus, adipisci tempora voluptate, id consequatur mollitia eveniet blanditiis. Illo quod repellendus alias? Cum rem doloremque adipisci accusantium? Saepe, necessitatibus!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi, mollitia, repellendus sapiente repudiandae labore rerum amet culpa inventore, modi non. Quo nisi veritatis vitae nam, labore fugit. Inventore culpa iusto, officia exercitationem. Voluptates quibusdam odit odio incidunt consequatur, consectetur aspernatur optio vitae molestias, quas repellendus fugit ullam culpa, eligendi et dignissimos voluptatibus illum? Molestias aliquam nostrum quasi ipsa culpa, iusto explicabo ut error, consequuntur enim temporibus, adipisci tempora voluptate, id consequatur mollitia eveniet blanditiis. Illo quod repellendus alias? Cum rem doloremque adipisci accusantium? Saepe, necessitatibus!
+                </p>
+            </div>
+        </section> 
+        <section class="fixed-bg bg-3" id="4"></section> 
+        <section class="scrolling-bg color-1">
+            <div class="content-wrap">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore incidunt suscipit similique, dolor corrupti cumque qui consectetur autem laborum fuga quas ipsam doloribus sequi, mollitia, repellendus sapiente repudiandae labore rerum amet culpa inventore, modi non. Quo nisi veritatis vitae nam, labore fugit. Inventore culpa iusto, officia exercitationem. Voluptates quibusdam odit odio incidunt consequatur, consectetur aspernatur optio vitae molestias, quas repellendus fugit ullam culpa, eligendi et dignissimos voluptatibus illum? Molestias aliquam nostrum quasi ipsa culpa, iusto explicabo ut error, consequuntur enim temporibus, adipisci tempora voluptate, id consequatur mollitia eveniet blanditiis. Illo quod repellendus alias? Cum rem doloremque adipisci accusantium? Saepe, necessitatibus!
+                </p>
+            </div> 
+        </section>
+        <section class="fixed-bg bg-4" id="5"></section>
+    </main>
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <script>
+        $(function () {
+
+            var btnMenu = $('.btn-menu'), target, elScroll;
+
+            btnMenu.on('click', function(e){
+                $(this).toggleClass('open');;
+                $(this).next('ul').toggleClass('open');
+            });
+
+            $('.main-nav a').on('click', function(e){
+                e.preventDefault();
+                target = $(e.currentTarget);
+                elScroll = $(target.attr('href'));
+
+                $('html, body').animate({
+                    scrollTop: elScroll.offset().top
+                }, 1000);
+
+            });
+
+        });
+    </script>
+</body>
+</html>
