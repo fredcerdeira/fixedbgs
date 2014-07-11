@@ -270,8 +270,8 @@ body.nav-open {
 .fixed-bg {
     min-height: 100%;
     width: 100%;
-    background-size: auto;
-    background-attachment: scroll;
+    background-size: cover;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
     z-index: 1;
@@ -289,6 +289,11 @@ body.nav-open {
 }
 .fixed-bg.bg-4 {
     background-image: url("../images/bgs/4.jpg");
+}
+
+
+.touch .fixed-bg {
+    background-attachment: scroll; /* due the poor support on devices */
 }
 
 .scrolling-bg {
