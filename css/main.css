@@ -104,6 +104,9 @@ ul {
     -ms-transform: translateY(50px);
     -o-transform: translateY(50px);
     transform: translateY(50px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 300px;
 }
 
 .main-nav li {
@@ -118,6 +121,10 @@ ul {
     border-top: 1px solid #D5D5D5;
     color: #626262;
     font: 2em/50px Arial, serif;
+}
+
+body.nav-open {
+    overflow: hidden;
 }
 
 @media only screen and (min-width: 850px) {
