@@ -269,10 +269,11 @@ body.nav-open {
 /* BACKGROUNDS -------------------------------- */
 .fixed-bg {
     min-height: 100%;
+    width: 100%;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center;
     z-index: 1;
     position: relative;
 }
