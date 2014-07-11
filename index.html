@@ -11,7 +11,7 @@
         <nav class="main-nav">
             <button class="btn-menu"><span>Menu</span></button>
             <ul>
-                <li><a href="#1">Section 1</a></li>
+                <li class="active"><a href="#1">Section 1</a></li>
                 <li><a href="#2">Section 2</a></li>
                 <li><a href="#3">Section 3</a></li>
                 <li><a href="#4">Section 4</a></li>
@@ -54,14 +54,18 @@
     <script>
         $(function () {
 
-            var btnMenu = $('.btn-menu'), target, elScroll;
+            var btnMenu = $('.btn-menu'),
+                menuItems = $('.main-nav li'),
+                section = $('.main-content > section'),
+                target, 
+                elScroll;
 
             btnMenu.on('click', function(e){
-                $(this).toggleClass('open');;
+                $(this).toggleClass('open');
                 $(this).next('ul').toggleClass('open');
             });
 
-            $('.main-nav a').on('click', function(e){
+            menuItems.find('a').on('click', function(e){
                 e.preventDefault();
                 target = $(e.currentTarget);
                 elScroll = $(target.attr('href'));
@@ -69,8 +73,25 @@
                 $('html, body').animate({
                     scrollTop: elScroll.offset().top
                 }, 1000);
-
             });
+
+
+            $(window).scroll(function(e) {
+                scrollTop = $(document).scrollTop();
+                index = getCurrentSection(section, scrollTop)-1;
+                
+                active = $(menuItems[index]);
+
+                menuItems.removeClass('active');
+                active.addClass('active');
+            });
+
+            var getCurrentSection = function(section, scroll) {
+                for(var i = 0; i < section.length; i++) {
+                    if($(section[i]).offset().top-5 > scroll) return i;
+                }
+                return i;
+            }
 
         });
     </script>
