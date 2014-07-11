@@ -63,6 +63,7 @@
             btnMenu.on('click', function(e){
                 $(this).toggleClass('open');
                 $(this).next('ul').toggleClass('open');
+                $('body').toggleClass('nav-open');
             });
 
             menuItems.find('a').on('click', function(e){
