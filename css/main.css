@@ -291,7 +291,6 @@ body.nav-open {
     background-image: url("../images/bgs/4.jpg");
 }
 
-
 .touch .fixed-bg {
     background-attachment: scroll; /* due the poor support on devices */
 }
