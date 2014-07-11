@@ -270,8 +270,8 @@ body.nav-open {
 .fixed-bg {
     min-height: 100%;
     width: 100%;
-    background-size: cover;
-    background-attachment: fixed;
+    background-size: auto;
+    background-attachment: scroll;
     background-repeat: no-repeat;
     background-position: center;
     z-index: 1;
